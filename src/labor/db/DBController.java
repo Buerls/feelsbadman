@@ -1,14 +1,16 @@
 package labor.db;
 
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import labor.control.CustomerController;
 import labor.model.Customer;
+import labor.model.Product;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.Collection;
 
 public class DBController {
-
-
 
 
     public static boolean login_auth(String customer__user_id, String customer_user_password, String login_type) throws SQLException {
@@ -60,6 +62,49 @@ public class DBController {
 
 
     }
+
+    public static ArrayList<Product> get_products(String product_type) throws SQLException {
+            ArrayList<Product> products = new ArrayList<Product>();
+            Connection connection = null;
+            DBHelper helper = new DBHelper();
+            PreparedStatement preparedStatement = null;
+            ResultSet resultSet;
+            String select = "SELECT * FROM stok_takip.product where product_type=";
+            try {
+
+                connection = helper.getConnection();
+                preparedStatement = connection.prepareStatement(select + "?");
+                preparedStatement.setString(1, product_type);
+                resultSet = preparedStatement.executeQuery();
+                Product product;
+                int i = 0;
+                while (resultSet.next()) {
+                    
+                    product = new Product(
+                            resultSet.getString("product_name"),
+                            resultSet.getInt("product_id"),
+                            resultSet.getString("product_price"),
+                            resultSet.getString("product_photo"),
+                            resultSet.getString("product_type"),
+                            resultSet.getInt("product_amount")
+                            );
+
+                    products.add(product);
+                    i++;
+                    System.out.println(product_type + " bilgileri cekildi.");
+                    System.out.println(i);
+                }
+
+
+            } catch (SQLException exception) {
+                helper.showErrorMessage(exception);
+            } finally {
+                connection.close();
+            }
+
+            return products;
+
+        }
 
 
 

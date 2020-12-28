@@ -139,8 +139,8 @@ public class LoginController {
     }
 
     private void switch_to_customer_login() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("/@../resources/design/patates.fxml"));
-        /*
+        Parent root = FXMLLoader.load(getClass().getResource("/resources/design/customer.fxml"));
+
         Scene scene2 = login_button.getScene();
 
         root.translateYProperty().set(scene2.getHeight());
@@ -154,7 +154,7 @@ public class LoginController {
         timeline.setOnFinished(event1 -> {
             login_StackPane.getChildren().remove(main_AnchorPane);
         });
-        timeline.play();*/
+        timeline.play();
     }
 
 

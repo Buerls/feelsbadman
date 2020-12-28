@@ -1,14 +1,163 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="albor.control.WorkerController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane fx:id="customer_screen" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="labor.control.CustomerController">
+   <children>
+      <Pane prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: #030303;">
+         <children>
+            <ImageView fitHeight="151.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/logo.png" />
+               </image>
+            </ImageView>
+            <HBox alignment="CENTER" layoutY="170.0" prefHeight="20.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="worker_name_surname_label" text="Calısan" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Button fx:id="computer_buttons" alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="8.0" layoutY="217.0" mnemonicParsing="false" onMouseEntered="#computer_parts_pane_open" onMouseExited="#computer_parts_pane_close" prefHeight="36.0" prefWidth="185.0" style="-fx-background-color: #5A8D3E; -fx-cursor: hand;" text="Yeni Ürün Ekle" textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="9.0" layoutY="217.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/add_product.png" />
+               </image>
+            </ImageView>
+            <Button alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="8.0" layoutY="260.0" mnemonicParsing="false" onMouseEntered="#computer_pane_open" onMouseExited="#computer_pane_close" prefHeight="36.0" prefWidth="185.0" style="-fx-background-color: #5A8D3E; -fx-cursor: hand;" text="Urun Sil" textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="9.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/delete_product.png" />
+               </image>
+            </ImageView>
+            <Button alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="8.0" layoutY="303.0" mnemonicParsing="false" onMouseEntered="#game_pane_open" onMouseExited="#game_pane_close" prefHeight="36.0" prefWidth="185.0" style="-fx-background-color: #5A8D3E; -fx-cursor: hand;" text="Ürün Güncelleme" textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="9.0" layoutY="303.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/change_product_amount.png" />
+               </image>
+            </ImageView>
+            <Button alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="8.0" layoutY="346.0" mnemonicParsing="false" onMouseEntered="#peripherals_pane_open" onMouseExited="#peripherals_pane_close" prefHeight="36.0" prefWidth="185.0" style="-fx-background-color: #5A8D3E; -fx-cursor: hand;" text="Son İşlemler" textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="9.0" layoutY="346.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/recent%20operations.png" />
+               </image>
+            </ImageView>
+            <Button alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="8.0" layoutY="389.0" mnemonicParsing="false" onMouseEntered="#software_pane_open" onMouseExited="#software_pane_close" prefHeight="36.0" prefWidth="185.0" style="-fx-background-color: #5A8D3E; -fx-cursor: hand;" text="Yönetim İşlemleri" textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="9.0" layoutY="389.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/administrator.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="167.0" fitWidth="172.0" layoutX="14.0" layoutY="433.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/feelsbadman_icon.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="200.0" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #0545FF;">
+         <children>
+            <ImageView fx:id="closeIcon" fitHeight="32.0" fitWidth="32.0" layoutX="558.0" layoutY="10.0" onMouseClicked="#close_icon_pressed" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+               <image>
+                  <Image url="@../images/close_icon.png" />
+               </image>
+            </ImageView>
+            <Pane fx:id="add_new_product" layoutY="42.0" prefHeight="557.0" prefWidth="600.0" style="-fx-background-color: #484aa1;" visible="false">
+               <children>
+                  <Text layoutX="211.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ÜRÜN EKLE" textAlignment="CENTER">
+                     <font>
+                        <Font name="Consolas" size="36.0" />
+                     </font>
+                  </Text>
+                  <GridPane layoutX="-34.0" layoutY="76.0" prefWidth="386.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <TextField GridPane.columnIndex="1" />
+                        <TextField prefWidth="102.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="203.0" text="Ürün Adı : ">
+                           <font>
+                              <Font name="Arial Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="192.0" text="Ürün Fiyatı : " GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Arial Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="192.0" text="Ürün Resim Adresi : " GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Arial Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="204.0" text="Ürün Miktarı : " GridPane.rowIndex="3">
+                           <font>
+                              <Font name="Arial Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="196.0" text="Ürün Tipi : " GridPane.rowIndex="4">
+                           <font>
+                              <Font name="Arial Bold" size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </GridPane>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="376.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true" />
+                  <Button layoutX="438.0" layoutY="266.0" mnemonicParsing="false" text="Ekle" />
+                  <Label layoutX="66.0" layoutY="391.0" prefHeight="17.0" prefWidth="467.0" textFill="#eb0707" />
+               </children>
+            </Pane>
+            <Pane fx:id="add_new_product1" layoutY="49.0" prefHeight="557.0" prefWidth="600.0" style="-fx-background-color: #484aa1;" visible="false" />
+            <Pane fx:id="add_new_product11" layoutY="42.0" prefHeight="557.0" prefWidth="600.0" style="-fx-background-color: #484aa1;" visible="false" />
+            <Pane fx:id="add_new_product111" layoutY="42.0" prefHeight="557.0" prefWidth="600.0" style="-fx-background-color: #484aa1;" visible="false" />
+            <Pane fx:id="add_new_product1111" layoutY="42.0" prefHeight="557.0" prefWidth="600.0" style="-fx-background-color: #484aa1;" />
+         </children></Pane>
+   </children>
 </AnchorPane>

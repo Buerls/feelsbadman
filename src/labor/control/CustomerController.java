@@ -2,17 +2,23 @@
 package labor.control;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.awt.event.ActionEvent;
 
 public class CustomerController {
-
     @FXML
     private AnchorPane customer_screen;
 
@@ -89,7 +95,7 @@ public class CustomerController {
     private Button headphone_button;
 
     @FXML
-    private Pane software_button;
+    private Pane software_pane;
 
     @FXML
     private Button ms_os_button;
@@ -97,173 +103,87 @@ public class CustomerController {
     @FXML
     private Button ms_office_button;
 
-    @FXML
-    void bilgisayarParcalariPaneAc(MouseEvent event) {
 
-    }
-
-    @FXML
-    void bilgisayarParcalariPaneKapat(MouseEvent event) {
-
-    }
-
-    @FXML
-    void bilgisayarlarPaneAc(MouseEvent event) {
-
-    }
-
-    @FXML
-    void bilgisayarlarPaneKapat(MouseEvent event) {
-
-    }
-
-    @FXML
-    void cevreBirimleriPaneAc(MouseEvent event) {
-
-    }
-
-    @FXML
-    void cevreBirimleriPaneKapat(MouseEvent event) {
-
-    }
-
-    @FXML
-    void closeIconBasildi(MouseEvent event) {
-
-    }
-
-    @FXML
-    void m_anaKartBtnBasildi(MouseEvent event) {
-
-    }
-
-    @FXML
-    void m_anaKartBtnRenkDegis1(MouseEvent event) {
-
-    }
-
-    @FXML
-    void m_anaKartBtnRenkDegis2(MouseEvent event) {
-
-    }
-
-    @FXML
-    void m_ekranKartiBtnBasildi(MouseEvent event) {
-
-    }
-
-    @FXML
-    void m_ekranKartiBtnRenkDegis1(MouseEvent event) {
-
-    }
-
-    @FXML
-    void m_ekranKartiBtnRenkDegis2(MouseEvent event) {
-
-    }
-
-    @FXML
-    void m_harddiskBtnBasildi(MouseEvent event) {
-
-    }
-
-    @FXML
-    void m_harddiskBtnRenkDegis1(MouseEvent event) {
-
-    }
-
-    @FXML
-    void m_harddiskBtnRenkDegis2(MouseEvent event) {
-
-    }
-
-    @FXML
-    void m_islemciBtnBasildi(MouseEvent event) {
-
-    }
-
-    @FXML
-    void m_islemciBtnRenkDegis1(MouseEvent event) {
-
-    }
-
-    @FXML
-    void m_islemciBtnRenkDegis2(MouseEvent event) {
-
-    }
-
-    @FXML
-    void m_klavyeBtnBasildi(MouseEvent event) {
-
-    }
-
-    @FXML
-    void m_klavyeBtnRenkDegis1(MouseEvent event) {
-
-    }
-
-    @FXML
-    void m_klavyeBtnRenkDegis2(MouseEvent event) {
-
-    }
-
-    @FXML
-    void m_kulaklikBtnBasildi(MouseEvent event) {
-
-    }
-
-    @FXML
-    void m_kulaklikBtnRenkDegis1(MouseEvent event) {
-
-    }
-
-    @FXML
-    void m_kulaklikBtnRenkDegis2(MouseEvent event) {
-
-    }
-
-    @FXML
-    void m_masaustuBtnBasildi(MouseEvent event) {
-
-    }
-
-    @FXML
-    void m_masaustuBtnRenkDegis1(MouseEvent event) {
-
-    }
-
-    @FXML
-    void m_masaustuBtnRenkDegis2(MouseEvent event) {
-
-    }
-
-    @FXML
-    void m_monitorBtnBasildi(MouseEvent event) {
-
-    }
-
-    @FXML
-    void m_monitorBtnRenkDegis1(MouseEvent event) {
-
-    }
-
-    @FXML
-    void m_monitorBtnRenkDegis2(MouseEvent event) {
-
-    }
-
-    @FXML
-    void m_mouseBtnBasildi(MouseEvent event) {
-
-    }
     public static String logged_in_user_id;
     public static String logged_in_user_password;
+
+        @FXML
+        void computer_parts_pane_open() { computer_parts_pane.setVisible(true); }
+
+        @FXML
+        void computer_parts_pane_close() { computer_parts_pane.setVisible(false); }
+
+        @FXML
+        void computer_pane_open() { computers_pane.setVisible(true); }
+
+        @FXML
+        void computer_pane_close() { computers_pane.setVisible(false); }
+
+        @FXML
+        void game_pane_open() { game_pane.setVisible(true); }
+
+        @FXML
+        void game_pane_close() { game_pane.setVisible(false); }
+
+        @FXML
+        void peripherals_pane_open() { peripherals_pane.setVisible(true); }
+
+        @FXML
+        void peripherals_pane_close() { peripherals_pane.setVisible(false); }
+
+        @FXML
+        void software_pane_open() { software_pane.setVisible(true); }
+
+        @FXML
+        void software_pane_close() { software_pane.setVisible(false); }
+
+        @FXML
+        void change_color_to_1(MouseEvent event){
+            Button button = (Button) event.getSource();
+            button.setTextFill(Color.LAWNGREEN);
+        }
+       @FXML
+       void change_color_to_2(MouseEvent event){
+           Button button = (Button) event.getSource();
+           button.setTextFill(Color.WHITE);
+       }
+
+       @FXML
+       void close_icon_pressed() {
+               Stage stage = (Stage) closeIcon.getScene().getWindow();
+               stage.close();
+       }
 
 
     @FXML
     void button_pressed(MouseEvent event){
         Button source = (Button) event.getSource();
-        System.out.println(source.getText());
+        ProductController.product_type = source.getText().toLowerCase().replace(" ","-");
+        load_product_scene();
     }
 
+    public void load_product_scene(){
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource("/resources/design/product.fxml"));
+            Stage urunlerEkrani = new Stage();
+            urunlerEkrani.setTitle("Urunler Ekrani");
+            urunlerEkrani.setScene(new Scene(root, 1000, 395));
+            urunlerEkrani.initStyle(StageStyle.DECORATED);
+
+            // arkadaki ekrana ulaşmayı engelliyor.
+            urunlerEkrani.initModality(Modality.APPLICATION_MODAL);
+            urunlerEkrani.show();
+
+        }catch (Exception e){
+            System.out.println("Urunler ekrani yüklenemedi.");
+        }
+
+    }
+
+
+
+
 }
+
+
+
