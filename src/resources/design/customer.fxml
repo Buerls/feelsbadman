@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="customer_screen" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="labor.control.CustomerController">
+   <children>
+      <Pane prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: #030303;">
+         <children>
+            <ImageView fitHeight="151.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/logo.png" />
+               </image>
+            </ImageView>
+            <HBox alignment="CENTER" layoutY="170.0" prefHeight="20.0" prefWidth="200.0">
+               <children>
+                  <Label fx:id="customer_name_surname_label" text="Musteri" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Black" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <Button fx:id="computer_buttons" alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="8.0" layoutY="217.0" mnemonicParsing="false" onMouseEntered="#bilgisayarParcalariPaneAc" onMouseExited="#bilgisayarParcalariPaneKapat" prefHeight="36.0" prefWidth="185.0" style="-fx-background-color: #5A8D3E; -fx-cursor: hand;" text="Bilgisayar Parçaları" textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="9.0" layoutY="217.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/computer_parts_icon.png" />
+               </image>
+            </ImageView>
+            <Button alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="8.0" layoutY="260.0" mnemonicParsing="false" onMouseEntered="#bilgisayarlarPaneAc" onMouseExited="#bilgisayarlarPaneKapat" prefHeight="36.0" prefWidth="185.0" style="-fx-background-color: #5A8D3E; -fx-cursor: hand;" text="Bilgisayarlar" textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="9.0" layoutY="260.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/computer_icons.png" />
+               </image>
+            </ImageView>
+            <Button alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="8.0" layoutY="303.0" mnemonicParsing="false" onMouseEntered="#oyunPaneAc" onMouseExited="#oyunPaneKapat" prefHeight="36.0" prefWidth="185.0" style="-fx-background-color: #5A8D3E; -fx-cursor: hand;" text="Gaming / Oyun" textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="9.0" layoutY="303.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/game_icon.png" />
+               </image>
+            </ImageView>
+            <Button alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="8.0" layoutY="346.0" mnemonicParsing="false" onMouseEntered="#cevreBirimleriPaneAc" onMouseExited="#cevreBirimleriPaneKapat" prefHeight="36.0" prefWidth="185.0" style="-fx-background-color: #5A8D3E; -fx-cursor: hand;" text="Çevre Birimleri" textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="9.0" layoutY="346.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/peripherals.png" />
+               </image>
+            </ImageView>
+            <Button alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="8.0" layoutY="389.0" mnemonicParsing="false" onMouseEntered="#yazilimPaneAc" onMouseExited="#yazilimPaneKapat" prefHeight="36.0" prefWidth="185.0" style="-fx-background-color: #5A8D3E; -fx-cursor: hand;" text="Yazılım" textAlignment="RIGHT" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="36.0" fitWidth="36.0" layoutX="9.0" layoutY="389.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/software_icon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="167.0" fitWidth="172.0" layoutX="14.0" layoutY="433.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/feelsbadman_icon.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="200.0" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: #0545FF;">
+         <children>
+            <ImageView fx:id="closeIcon" fitHeight="32.0" fitWidth="32.0" layoutX="558.0" layoutY="10.0" onMouseClicked="#closeIconBasildi" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+               <image>
+                  <Image url="@../images/close_icon.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="closeIcon1" fitHeight="32.0" fitWidth="32.0" layoutX="558.0" layoutY="49.0" onMouseClicked="#closeIconBasildi" pickOnBounds="true" preserveRatio="true" scaleX="-1.0" style="-fx-cursor: hand;">
+               <image>
+                  <Image url="@../images/supermarket_trolley_icon.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="closeIcon2" fitHeight="32.0" fitWidth="32.0" layoutX="558.0" layoutY="94.0" onMouseClicked="#closeIconBasildi" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+               <image>
+                  <Image url="@../images/user_icon.png" />
+               </image>
+            </ImageView>
+            <Pane layoutX="14.0" layoutY="138.0" prefHeight="421.0" prefWidth="573.0" style="-fx-background-color: #FFFFFF;" />
+         </children></Pane>
+      <Pane fx:id="computer_parts_pane" layoutX="193.0" layoutY="218.0" onMouseEntered="#computer_parts_pane_open" onMouseExited="#computer_parts_pane_close" prefHeight="210.0" prefWidth="317.0" style="-fx-background-color: #1D2021;" visible="false">
+         <children>
+            <Label layoutX="13.0" layoutY="14.0" text="Ana Parçalar" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="processor_button" layoutX="35.0" layoutY="43.0" mnemonicParsing="false" onMouseClicked="#button_pressed" onMouseEntered="#processor_button_changecolor_1" onMouseExited="#processor_button_changecolor_2" style="-fx-cursor: hand; -fx-background-color: #1D2021;" text="İşlemci" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="motherboard_button" layoutX="33.0" layoutY="75.0" mnemonicParsing="false" onMouseClicked="#button_pressed" onMouseEntered="#motherboard_button_changecolor_1" onMouseExited="#motherboard_button_changecolor2" style="-fx-cursor: hand; -fx-background-color: #1D2021;" text="Anakart" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="ram_button" layoutX="41.0" layoutY="107.0" mnemonicParsing="false" onMouseClicked="#button_pressed" onMouseEntered="#ram_button_changecolor_1" onMouseExited="#ram_button_changecolor_2" style="-fx-cursor: hand; -fx-background-color: #1D2021;" text="Ram" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="graphics_card_button" layoutX="24.0" layoutY="139.0" mnemonicParsing="false" onMouseClicked="#button_pressed" onMouseEntered="#graphics_card_button_changecolor_1" onMouseExited="#graphics_card_button_changecolor_2" style="-fx-cursor: hand; -fx-background-color: #1D2021;" text="Ekran Kartı" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Button>
+            <Label layoutX="141.0" layoutY="14.0" text="Depolama" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="hard_disk_button" layoutX="148.0" layoutY="43.0" mnemonicParsing="false" onMouseClicked="#button_pressed" onMouseEntered="#hard_disk_button_changecolor1" onMouseExited="#m_harddiskBtnRenkDegis2" style="-fx-cursor: hand; -fx-background-color: #1D2021;" text="Harddisk" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="ssd_button" layoutX="159.0" layoutY="75.0" mnemonicParsing="false" onMouseClicked="#button_pressed" onMouseEntered="#m_ssdBtnRenkDegis1" onMouseExited="#m_ssdBtnRenkDegis2" style="-fx-cursor: hand; -fx-background-color: #1D2021;" text="SSD" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="computers_pane" layoutX="193.0" layoutY="218.0" onMouseEntered="#bilgisayarlarPaneAc" onMouseExited="#bilgisayarlarPaneKapat" prefHeight="210.0" prefWidth="317.0" style="-fx-background-color: #1D2021;" visible="false">
+         <children>
+            <Button fx:id="desktop_button" layoutX="32.0" layoutY="43.0" mnemonicParsing="false" onMouseClicked="#m_masaustuBtnBasildi" onMouseEntered="#m_masaustuBtnRenkDegis1" onMouseExited="#m_masaustuBtnRenkDegis2" style="-fx-cursor: hand; -fx-background-color: #1D2021;" text="Masaüstü Bilgisayarlar" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Button>
+            <Label layoutX="13.0" layoutY="14.0" text="Masaüstü Bilgisayarlar" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="200.0" layoutY="14.0" text="Notebooklar" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="notebook_button" layoutX="213.0" layoutY="43.0" mnemonicParsing="false" onMouseClicked="#button_pressed" onMouseEntered="#m_notebookBtnRenkDegis1" onMouseExited="#m_notebookBtnRenkDegis2" style="-fx-cursor: hand; -fx-background-color: #1D2021;" text="Notebook" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="game_pane" layoutX="193.0" layoutY="218.0" onMouseEntered="#oyunPaneAc" onMouseExited="#oyunPaneKapat" prefHeight="210.0" prefWidth="317.0" style="-fx-background-color: #1D2021;" visible="false">
+         <children>
+            <Label layoutX="13.0" layoutY="14.0" text="Gaming Konsol" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="ps5_button" layoutX="51.0" layoutY="45.0" mnemonicParsing="false" onMouseClicked="#button_pressed" onMouseEntered="#m_ps5BtnRenkDegis1" onMouseExited="#m_ps5BtnRenkDegis2" style="-fx-cursor: hand; -fx-background-color: #1D2021;" text="PS5" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="xbox_series_x_button" layoutX="24.0" layoutY="74.0" mnemonicParsing="false" onMouseClicked="#button_pressed" onMouseEntered="#m_xboxSeriesXBtnRenkDegis1" onMouseExited="#m_xboxSeriesXBtnRenkDegis2" style="-fx-cursor: hand; -fx-background-color: #1D2021;" text="Xbox Series X" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="xbox_series_s_button" layoutX="24.0" layoutY="105.0" mnemonicParsing="false" onMouseClicked="#button_pressed" onMouseEntered="#m_xboxSeriesSBtnRenkDegis1" onMouseExited="#m_xboxSeriesSBtnRenkDegis2" style="-fx-cursor: hand; -fx-background-color: #1D2021;" text="Xbox Series S" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="peripherals_pane" layoutX="193.0" layoutY="218.0" onMouseEntered="#cevreBirimleriPaneAc" onMouseExited="#cevreBirimleriPaneKapat" prefHeight="210.0" prefWidth="317.0" style="-fx-background-color: #1D2021;" visible="false">
+         <children>
+            <Label layoutX="13.0" layoutY="14.0" text="Bilgisayar ve Notebook" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="monitor_button" layoutX="73.0" layoutY="44.0" mnemonicParsing="false" onMouseClicked="#button_pressed" onMouseEntered="#m_monitorBtnRenkDegis1" onMouseExited="#m_monitorBtnRenkDegis2" style="-fx-cursor: hand; -fx-background-color: #1D2021;" text="Monitör" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="keyboard_button" layoutX="75.0" layoutY="74.0" mnemonicParsing="false" onMouseClicked="#button_pressed" onMouseEntered="#m_klavyeBtnRenkDegis1" onMouseExited="#m_klavyeBtnRenkDegis2" style="-fx-cursor: hand; -fx-background-color: #1D2021;" text="Klavye" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="mouse_button" layoutX="75.0" layoutY="104.0" mnemonicParsing="false" onMouseClicked="#button_pressed" onMouseEntered="#m_mouseBtnRenkDegis1" onMouseExited="#m_mouseBtnRenkDegis2" style="-fx-cursor: hand; -fx-background-color: #1D2021;" text="Mouse" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="mousepad_button" layoutX="63.0" layoutY="134.0" mnemonicParsing="false" onMouseClicked="#button_pressed" onMouseEntered="#m_mousePadBtnRenkDegis1" onMouseExited="#m_mousePadBtnRenkDegis2" style="-fx-cursor: hand; -fx-background-color: #1D2021;" text="Mouse Pad" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="headphone_button" layoutX="72.0" layoutY="164.0" mnemonicParsing="false" onMouseClicked="#button_pressed" onMouseEntered="#m_kulaklikBtnRenkDegis1" onMouseExited="#m_kulaklikBtnRenkDegis2" style="-fx-cursor: hand; -fx-background-color: #1D2021;" text="Kulaklık" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="software_button" layoutX="193.0" layoutY="218.0" onMouseEntered="#yazilimPaneAc" onMouseExited="#yazilimPaneKapat" prefHeight="210.0" prefWidth="317.0" style="-fx-background-color: #1D2021;" visible="false">
+         <children>
+            <Button fx:id="ms_os_button" layoutX="39.0" layoutY="43.0" mnemonicParsing="false" onMouseClicked="#button_pressed" onMouseEntered="#m_msIsletimBtnRenkDegis1" onMouseExited="#m_msIsletimBtnRenkDegis2" style="-fx-cursor: hand; -fx-background-color: #1D2021;" text="Microsoft" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Button>
+            <Label layoutX="14.0" layoutY="14.0" text="İşletim Sistemi" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="159.0" layoutY="14.0" text="Office Yazılımları" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="ms_office_button" layoutX="192.0" layoutY="43.0" mnemonicParsing="false" onMouseClicked="#button_pressed" onMouseEntered="#m_msOfficeBtnRenkDegis1" onMouseExited="#m_msOfficeBtnRenkDegis2" style="-fx-cursor: hand; -fx-background-color: #1D2021;" text="Microsoft" textFill="WHITE">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
