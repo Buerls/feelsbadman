@@ -1,8 +1,16 @@
 package labor.model;
 
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import labor.control.WorkerProductSearchController;
+import labor.db.DBController;
+
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.sql.SQLException;
 
 public class Product {
     protected String product_name;
@@ -12,12 +20,15 @@ public class Product {
     protected String product_type;
     protected int product_amount;
     protected ImageView product_image;
-    protected Button buy_button;
+    //protected Button buy_button;
+    public static int product_MAX_id;
 
 
     public Product(String product_name, int product_id, String product_price, String product_photo, String product_type, int product_amount) {
         Image image = new Image(product_photo);
         ImageView imageView = new ImageView(image);
+        imageView.setFitHeight(170);
+        imageView.setFitWidth(170);
         this.product_name = product_name;
         this.product_id = product_id;
         this.product_price = product_price;
@@ -25,12 +36,18 @@ public class Product {
         this.product_type = product_type;
         this.product_amount = product_amount;
         this.product_image = imageView;
-        this.buy_button = new Button("Satın Al");
+        /*
+        this.buy_button = new Button("X");
         buy_button.setOnAction(event -> {
-            System.out.println("bu butona basti id:" + product_name);
-
+            System.out.println("bu butona basti id:" + this.product_id);
+            try {
+                DBController.delete_product(this.product_id);
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+            WorkerProductSearchController.all_products_array.remove(this);
         });
-
+*/
 
     }
 
@@ -90,12 +107,12 @@ public class Product {
     public void setProduct_image(ImageView product_image) {
         this.product_image = product_image;
     }
-
+/*
     public Button getBuy_button() {
         return buy_button;
     }
 
     public void setBuy_button(Button buy_button) {
         this.buy_button = buy_button;
-    }
+    }*/
 }

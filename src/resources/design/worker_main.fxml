@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="worker_main_pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: #0D47A1;" stylesheets="@../style/style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="labor.control.WorkerMainController">
+   <children>
+      <HBox layoutX="14.0" layoutY="252.0">
+         <children>
+            <Label text="Giriş Yapılan Kullanıcı : " textFill="WHITE">
+               <font>
+                  <Font name="Consolas Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="user_id_label" alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="186.0" text="user_id" textAlignment="CENTER" textFill="WHITE" />
+         </children>
+      </HBox>
+      <ImageView fitHeight="128.0" fitWidth="128.0" layoutX="136.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/warehouse.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="recent_sales_button" layoutX="120.0" layoutY="400.0" mnemonicParsing="false" onMouseClicked="#switch_to_recent_sales" prefWidth="160.0" text="Son Satışlar" />
+      <Button fx:id="administration_button" layoutX="120.0" layoutY="460.0" mnemonicParsing="false" onMouseClicked="#switch_to_administration" prefWidth="160.0" text="Yönetim İşlemleri" />
+      <Button fx:id="product_operations_button" layoutX="120.0" layoutY="340.0" mnemonicParsing="false" onMouseClicked="#switch_to_product_search" prefWidth="160.0" text="Ürün İşlemleri" />
+      <ImageView fx:id="logout_imageview" fitHeight="27.0" fitWidth="29.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#switch_to_login" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/log-out.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>

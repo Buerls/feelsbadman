@@ -1,5 +1,4 @@
 package labor.control;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -39,6 +38,7 @@ public class ProductController implements Initializable {
         }
         create_table();
     }
+
 
     public ObservableList<Product> getProduct() {
             ObservableList<Product> products = FXCollections.observableArrayList();

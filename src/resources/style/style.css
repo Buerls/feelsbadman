@@ -1,0 +1,39 @@
+.button{
+    -fx-font-weight: bold;
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 22;
+    -fx-font-size: 14;
+    -fx-text-fill: #0D47A1;
+    -fx-font-family: Consolas;
+    -fx-text-alignment: center;
+}
+.button:hover{
+    -fx-font-weight: bold;
+    -fx-background-color: #90b3d1;
+    -fx-background-radius: 22;
+    -fx-font-size: 14;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-family: Consolas;
+    -fx-text-alignment: center;
+
+}
+.text-field {
+    -fx-background-color: white;
+    -fx-border-color : #D7D6DC;
+    -fx-background-insets: -0.2, 1, -1.4, 3;
+    -fx-background-radius: 0;
+    -fx-padding: 4 7 4 15 ;
+    -fx-prompt-text-fill: derive(-fx-control-inner-background,-30%);
+}
+
+.text-field:focused {
+    -fx-border-color : #D7D6DC;
+    -fx-background-color: white;
+    -fx-background-insets: -0.2, 1, -1.4, 3;
+    -fx-background-radius: 0;
+    -fx-padding: 4 7 4 15 ;
+}
+.split-menu-button{
+    
+}
+

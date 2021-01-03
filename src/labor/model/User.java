@@ -2,13 +2,13 @@ package labor.model;
 public class User {
     protected int id;
     protected String name;
-    protected String surnamename;
+    protected String surname;
     protected String user_id;
     protected String user_password;
 
-    public User(String name, String surnamename, String user_id, String user_password,int id) {
+    public User(String name, String surname, String user_id, String user_password, int id) {
         this.name = name;
-        this.surnamename = surnamename;
+        this.surname = surname;
         this.user_id = user_id;
         this.user_password = user_password;
         this.id = id;
@@ -22,12 +22,12 @@ public class User {
         this.name = name;
     }
 
-    public String getSurnamename() {
-        return surnamename;
+    public String getSurname() {
+        return surname;
     }
 
-    public void setSurnamename(String surnamename) {
-        this.surnamename = surnamename;
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
     public String getUser_id() {
