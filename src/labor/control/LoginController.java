@@ -53,13 +53,9 @@ public class LoginController {
             if (DBController.login_auth(user_id, user_password, user_login_type)){
                 switch (user_login_type) {
                     case "müşteri":
-                        CustomerController.user_id = user_id;
-                        CustomerController.user_password = user_password;
                         switch_to_customer_login();
                         break;
                     case "çalışan":
-                        WorkerMainController.user_id = user_id;
-                        WorkerMainController.user_password = user_password;
                         switch_to_worker_login();
                         break;
                     default:
@@ -118,38 +114,6 @@ public class LoginController {
     }
 
 
-
-
-/*
-
-    @FXML
-    public void login() throws SQLException, IOException {
-        String user_id = customer_user_id_Field.getText();
-        String user_password = customer_user_password_Field.getText();
-        if (login_type.equals("customer")) {
-            if (DBController.login_auth(user_id, user_password, login_type)) {
-                wrong_entry_Text.setVisible(false);
-                CustomerController.user_id = user_id;
-                CustomerController.user_password = user_password;
-                switch_to_customer_login();
-            } else {
-                wrong_entry_Text.setVisible(true);
-            }
-        } else {
-            if (DBController.login_auth(user_id, user_password, login_type)) {
-                wrong_entry_Text.setVisible(false);
-                WorkerMainController.user_id= user_id;
-                WorkerMainController.user_password= user_password;
-                switch_to_worker_login();
-            } else {
-                wrong_entry_Text.setVisible(true);
-            }
-
-        }
-
-
-    }
- */
 
     private void switch_to_customer_login() throws IOException {
         Stage stage = (Stage) login_anchorpane.getScene().getWindow();

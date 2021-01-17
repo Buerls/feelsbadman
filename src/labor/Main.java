@@ -16,9 +16,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("/resources/design/login.fxml"));
-        System.out.println("Fonksityona girdi");
         try {
-            System.out.println("Try a girdi");
             WorkerProductSearchController.all_products_array = DBController.get_products_all();
             
         } catch (SQLException throwables) {

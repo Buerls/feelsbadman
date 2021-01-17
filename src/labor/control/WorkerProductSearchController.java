@@ -192,6 +192,7 @@ public class WorkerProductSearchController implements Initializable {
             error(e.toString());
         }
         refresh_table();
+        search_product();
     }
 
     @FXML
@@ -208,7 +209,7 @@ public class WorkerProductSearchController implements Initializable {
         }
         refresh_table();
 
-
+        search_product();
     }
 
     @FXML
@@ -220,6 +221,7 @@ public class WorkerProductSearchController implements Initializable {
         } catch (Exception e) {
             System.out.println(e.toString());
         }
+        search_product();
     }
 
 
