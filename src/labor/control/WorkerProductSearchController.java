@@ -21,13 +21,14 @@ import javafx.stage.StageStyle;
 import labor.db.DBController;
 import labor.model.Product;
 
+
 import javax.swing.*;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class WorkerProductSearchController implements Initializable {
+public class WorkerProductSearchController extends WorkerMenuBase implements Initializable {
     @FXML
     private TextField product_name_text;
 
@@ -119,11 +120,11 @@ public class WorkerProductSearchController implements Initializable {
                 }
                 String lowerCaseFilter = newValue.toLowerCase();
 
-                // Does not match.
+
                 if (product.getProduct_name().toLowerCase().indexOf(lowerCaseFilter) != -1) {
-                    return true; // Filter matches username
+                    return true;
                 } else
-                    return product.getProduct_type().toLowerCase().indexOf(lowerCaseFilter) != -1; // Filter matches password
+                    return product.getProduct_type().toLowerCase().indexOf(lowerCaseFilter) != -1;
             });
         });
         SortedList<Product> sortedData = new SortedList<>(filteredData);
@@ -137,29 +138,14 @@ public class WorkerProductSearchController implements Initializable {
         search_product();
     }
 
+    @Override
     public void back_to_main_menu() {
         Stage stage = (Stage) table_view.getParent().getScene().getWindow();
         stage.close();
-
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("/resources/design/worker_main.fxml"));
-            Stage worker_main = new Stage();
-            worker_main.setTitle("Worker Ekrani");
-            worker_main.setScene(new Scene(root, 400, 600));
-            worker_main.setX(510);
-            worker_main.setY(250);
-            worker_main.initStyle(StageStyle.UNDECORATED);
-            worker_main.show();
-
-        } catch (Exception e) {
-            System.out.println("Worker ekrani yüklenemedi.");
-        }
-
-
+        super.back_to_main_menu();
     }
 
 
-    ////////***************
     @FXML
     void getSelected(MouseEvent event) {
         try {

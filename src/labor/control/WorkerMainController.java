@@ -17,7 +17,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class WorkerMainController implements Initializable {
+public class WorkerMainController implements Initializable, SubController {
 
     @FXML
     private Pane worker_main_pane;
@@ -48,14 +48,11 @@ public class WorkerMainController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         user_id_label.setText(name);
-        if (acces_level.equals("admin")) {
-            administration_button.setDisable(false);
-        }else{
-            administration_button.setDisable(true);
-        }
+        administration_button.setDisable(!acces_level.equals("admin"));
 
     }
 
+    @Override
     public void switch_to_login() {
         Stage stage = (Stage) worker_main_pane.getScene().getWindow();
         stage.close();
@@ -74,26 +71,6 @@ public class WorkerMainController implements Initializable {
         }
     }
 
-    public void switch_to_add_product() {
-        Stage stage = (Stage) worker_main_pane.getScene().getWindow();
-        stage.close();
-
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("/resources/design/add_product.fxml"));
-            Stage add_product = new Stage();
-            add_product.setTitle("Add product");
-            add_product.setScene(new Scene(root, 400, 600));
-            add_product.setX(510);
-            add_product.setY(250);
-            add_product.initStyle(StageStyle.UNDECORATED);
-            add_product.show();
-
-        } catch (Exception e) {
-            System.out.println("Add Product ekrani yüklenemedi.");
-
-        }
-
-    }
 
     public void switch_to_product_search() {
         Stage stage = (Stage) worker_main_pane.getScene().getWindow();

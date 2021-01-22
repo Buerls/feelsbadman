@@ -31,7 +31,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class CustomerController implements Initializable {
+public class CustomerController implements Initializable,SubController {
 
     @FXML
     private TableView<Product> table_view;
@@ -75,6 +75,7 @@ public class CustomerController implements Initializable {
     ArrayList<Product> all_products_array;
 
     @FXML
+    @Override
     public void switch_to_login() {
         Stage stage = (Stage) table_view.getScene().getWindow();
         stage.close();

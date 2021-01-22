@@ -1,4 +1,5 @@
 package labor.model;
+
 public class User {
     protected int id;
     protected String name;
@@ -52,5 +53,9 @@ public class User {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public void log_info() {
+        System.out.println("Giriş yapan kullanıcı :" + this.name + " " + this.surname);
     }
 }

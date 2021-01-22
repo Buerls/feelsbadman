@@ -23,7 +23,7 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class SaleController implements Initializable {
+public class SaleController extends WorkerMenuBase implements Initializable {
 
     @FXML
     private TableView<Sale> table_view;
@@ -31,8 +31,6 @@ public class SaleController implements Initializable {
     @FXML
     private TextField search_sale_text_field;
 
-    @FXML
-    private ImageView back_button;
 
     ObservableList<Sale> all_sales_obl;
 
@@ -90,39 +88,25 @@ public class SaleController implements Initializable {
                 }
                 String lowerCaseFilter = newValue.toLowerCase();
 
-                // Does not match.
+
                 if (Sale.getCustomer_company().toLowerCase().indexOf(lowerCaseFilter) != -1) {
-                    return true; // Filter matches username
+                    return true;
                 }
                 if (String.valueOf(Sale.getProduct_id()).toLowerCase().indexOf(lowerCaseFilter) != -1) {
-                    return true; // Filter matches username
+                    return true;
                 } else
-                    return Sale.getCustomer_company().toLowerCase().indexOf(lowerCaseFilter) != -1; // Filter matches password
+                    return Sale.getCustomer_company().toLowerCase().indexOf(lowerCaseFilter) != -1;
             });
         });
         SortedList<Sale> sortedData = new SortedList<>(filteredData);
         sortedData.comparatorProperty().bind(table_view.comparatorProperty());
         table_view.setItems(sortedData);
     }
+    @Override
     public void back_to_main_menu() {
         Stage stage = (Stage) table_view.getParent().getScene().getWindow();
         stage.close();
-
-        try {
-            Parent root = FXMLLoader.load(getClass().getResource("/resources/design/worker_main.fxml"));
-            Stage worker_main = new Stage();
-            worker_main.setTitle("Worker Ekrani");
-            worker_main.setScene(new Scene(root, 400, 600));
-            worker_main.setX(510);
-            worker_main.setY(250);
-            worker_main.initStyle(StageStyle.UNDECORATED);
-            worker_main.show();
-
-        } catch (Exception e) {
-            System.out.println("Worker ekrani yüklenemedi.");
-        }
-
-
+        super.back_to_main_menu();
     }
 
 }

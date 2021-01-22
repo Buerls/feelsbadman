@@ -22,8 +22,6 @@ public class RegisterController {
     @FXML
     private AnchorPane register_anchorpane;
 
-    @FXML
-    private Button register_button;
 
     @FXML
     private TextField user_id_textfield;
@@ -38,11 +36,11 @@ public class RegisterController {
     private TextField user_name_textfield;
 
     @FXML
-    void register() {
+    public void register() {
 
 
         try {
-            if(user_name_textfield.getText().equals("") || user_surname_textfield.getText().equals("")|| user_id_textfield.getText().equals("")|| user_password_textfield.getText().equals("")|| user_company_textfield.getText().equals("")){
+            if (user_name_textfield.getText().equals("") || user_surname_textfield.getText().equals("") || user_id_textfield.getText().equals("") || user_password_textfield.getText().equals("") || user_company_textfield.getText().equals("")) {
                 throw new Exception("Alanları boş bırakmayınız");
             }
             Customer customer = new Customer(
@@ -56,13 +54,12 @@ public class RegisterController {
             DBController.add_new_customer(customer);
             success();
         } catch (Exception e) {
-             String error = e.toString();
-            if(error.equals("java.lang.Exception: Seçtiğiniz isimle kayıtlı müşteri bulunmaktadır")){
+            String error = e.toString();
+            if (error.equals("java.lang.Exception: Seçtiğiniz isimle kayıtlı müşteri bulunmaktadır")) {
                 error("Seçtiğiniz isimle kayıtlı müşteri bulunmaktadır");
-            }else if(error.equals("java.lang.Exception: Alanları boş bırakmayınız")){
+            } else if (error.equals("java.lang.Exception: Alanları boş bırakmayınız")) {
                 error("Alanları boş bırakmayınız");
-            }
-            else{
+            } else {
                 error(error);
             }
         }
@@ -93,11 +90,11 @@ public class RegisterController {
                 JOptionPane.ERROR_MESSAGE);
     }
 
-       public void success(){
-            JOptionPane.showMessageDialog(null,
-                    "Kayıt Tamamlandı.",
-                    "Bilgi",
-                    JOptionPane.INFORMATION_MESSAGE);
+    public void success() {
+        JOptionPane.showMessageDialog(null,
+                "Kayıt Tamamlandı.",
+                "Bilgi",
+                JOptionPane.INFORMATION_MESSAGE);
 
-        }
+    }
 }

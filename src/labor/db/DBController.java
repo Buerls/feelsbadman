@@ -2,7 +2,6 @@ package labor.db;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import labor.control.AdminController;
 import labor.control.CustomerController;
 import labor.control.WorkerMainController;
 import labor.model.Customer;
@@ -54,11 +53,26 @@ public class DBController {
                     CustomerController.customer_name = resultSet.getString("customer_name");
                     CustomerController.customer_company = resultSet.getString("customer_company");
                     CustomerController.customer_id = resultSet.getInt("customer_id");
+                    Customer customer = new Customer(
+                            resultSet.getString("customer_name"),
+                            resultSet.getString("customer_surname"),
+                            resultSet.getString("customer_user_id"),
+                            resultSet.getInt("customer_id"),
+                            resultSet.getString("customer_user_password"),
+                            resultSet.getString("customer_company"));
+                    customer.log_info();
                 }
                 if (login_type.equals("çalışan")) {
-                    WorkerMainController.name = resultSet.getString("worker_name")+" "+resultSet.getString("worker_surname");
+                    WorkerMainController.name = resultSet.getString("worker_name") + " " + resultSet.getString("worker_surname");
                     WorkerMainController.acces_level = resultSet.getString("worker_authority");
-
+                    Worker worker = new Worker(
+                            resultSet.getString("worker_name"),
+                            resultSet.getString("worker_surname"),
+                            resultSet.getString("worker_user_id"),
+                            resultSet.getString("worker_user_password"),
+                            resultSet.getInt("worker_id"),
+                            resultSet.getString("worker_authority"));
+                    worker.log_info();
                 }
 
             }
@@ -84,14 +98,12 @@ public class DBController {
         ResultSet resultSet;
         String select = "SELECT * FROM stok_takip.product";
         try {
-
             connection = helper.getConnection();
             statement = connection.createStatement();
             resultSet = statement.executeQuery(select);
             Product product;
             int i = 0;
             while (resultSet.next()) {
-
                 product = new Product(
                         resultSet.getString("product_name"),
                         resultSet.getInt("product_id"),
@@ -100,15 +112,10 @@ public class DBController {
                         resultSet.getString("product_type"),
                         resultSet.getInt("product_amount")
                 );
-
                 products.add(product);
-
                 i++;
-
-
             }
             Product.product_MAX_id = i;
-
         } catch (SQLException exception) {
             helper.showErrorMessage(exception);
         } finally {
@@ -326,8 +333,6 @@ public class DBController {
                 );
 
                 sales.add(sale);
-
-
 
 
             }
